@@ -27,4 +27,3 @@ INCLUDEPATH += $$PWD/../deploy_files/libxmlparser/include
 DEPENDPATH += $$PWD/../deploy_files/libxmlparser/include
 
 unix:!macx: PRE_TARGETDEPS += $$PWD/../deploy_files/libxmlparser/libXmlParser.a
-

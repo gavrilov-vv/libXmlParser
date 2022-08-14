@@ -20,6 +20,7 @@ public:
     qint32 init();
 
     QList<Book> fetchBooks(const QString &_data);
+    QList<Book> fetchBooks1(const QString &_data);
 
 };
 

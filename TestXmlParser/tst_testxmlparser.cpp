@@ -25,6 +25,9 @@ private slots:
     void testParseCatalog();
     void testParseCatalog_data();
 
+    void testParseCatalog1();
+    void testParseCatalog1_data();
+
 };
 
 TestXmlParser::TestXmlParser()
@@ -71,6 +74,37 @@ void TestXmlParser::testParseCatalog_data()
     QString _str = QString(_f.readAll());
 
     QTest::newRow("book_catalog")
+            << (QString) _str;
+
+    _f.close();
+}
+
+void TestXmlParser::testParseCatalog1()
+{
+    QFETCH(QString, xmlstring);
+
+    QList<Book> _books = pXmlParser->fetchBooks1(xmlstring);
+
+    QCOMPARE(_books.size(), 12);
+
+    Book _b1 = _books.at(0);
+
+    QCOMPARE(_b1.id, "bk101");
+
+
+}
+
+void TestXmlParser::testParseCatalog1_data()
+{
+    QTest::addColumn<QString>("xmlstring");
+
+    QFile _f(":/books.xml");
+
+    _f.open(QFile::ReadOnly);
+
+    QString _str = QString(_f.readAll());
+
+    QTest::newRow("book_catalog1")
             << (QString) _str;
 
     _f.close();
