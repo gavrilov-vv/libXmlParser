@@ -42,7 +42,7 @@ QList<Book> XmlParser::fetchBooks(const QString &_data)
                 QString _str = _nodeList.at(i).toElement().elementsByTagName("publish_date").at(0).toElement().text();
                 _book.publish_date = QDate::fromString(_str, "yyyy-MM-dd");
                 _book.description = _nodeList.at(i).toElement().elementsByTagName("description").at(0).toElement().text();
-                qDebug() << _book.toString();
+
                 _lst.append(_book);
             }
 
