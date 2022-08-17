@@ -1,2 +1,2 @@
-# libXmlParser
-Simple XML parser library example
+# НАЗНАЧЕНИЕ
+Простая библиотека для демонстрации функций разбора XML
